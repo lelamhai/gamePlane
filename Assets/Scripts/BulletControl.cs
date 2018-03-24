@@ -27,4 +27,13 @@ public class BulletControl : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if(collision.gameObject.tag == "emeny")
+		{
+			Destroy (this.gameObject);
+			Destroy (collision.gameObject);
+		}
+	}
 }
