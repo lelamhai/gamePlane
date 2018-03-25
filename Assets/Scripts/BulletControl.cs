@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class BulletControl : MonoBehaviour {
     public float speed;
-	// Use this for initialization
-	void Start () {
+    float cameraHeight;
+    float cameraWidth;
+    // Use this for initialization
+    void Start()
+    {
         speed = 5f;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        cameraHeight = Camera.main.orthographicSize;
+        cameraWidth = cameraHeight * Screen.width / Screen.height;
+    }
+
+    // Update is called once per frame
+    void Update () {
         shootBullet();
         destroyBullet();
     }
@@ -18,11 +23,22 @@ public class BulletControl : MonoBehaviour {
     public void shootBullet()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
+        start = StartCoroutine(Bullet());
+    }
+
+
+    Coroutine start;
+    IEnumerator Bullet()
+    {
+        
+        yield return new WaitForSeconds(5f);
+
+
     }
 
     public void destroyBullet()
     {
-        if(transform.position.y > 5.55f)
+        if(transform.position.y > cameraHeight)
         {
             Destroy(this.gameObject);
         }
