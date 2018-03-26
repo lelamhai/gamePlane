@@ -256,9 +256,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dada61376f6a54ebbb0d606aa394552d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   BGimage: {fileID: 0}
   joytickImage: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+=======
+  InputDirection: {x: 0, y: 0, z: 0}
+>>>>>>> 8a6a354fb94d05d089f96b76106fc510ed0806e5
 --- !u!1 &790370520
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,8 +470,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listBG: {fileID: 0}
   bullet: {fileID: 1549547884387184, guid: ed66d97404882ad44a11c91e1f65e912, type: 2}
+<<<<<<< HEAD
   moveJoytick: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
+=======
+  moveJoytick: {fileID: 307256655}
+>>>>>>> 8a6a354fb94d05d089f96b76106fc510ed0806e5
 --- !u!61 &919478270
 BoxCollider2D:
   m_ObjectHideFlags: 0

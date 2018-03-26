@@ -1,3 +1,7 @@
 .vs/
+<<<<<<< HEAD
 Temp/*
 Library/*
+=======
+temp/*
+>>>>>>> 8a6a354fb94d05d089f96b76106fc510ed0806e5
