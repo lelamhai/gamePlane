@@ -8,18 +8,21 @@ public class PlayerControl : MonoBehaviour {
     private float speed;
     float cameraHeight;
     float cameraWidth;
+
+	public Joytick moveJoytick;
+	public Vector3 direction;
     // Use this for initialization
     void Start () {
         speed = 5f;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
+
+
     }
 	
 	// Update is called once per frame
 	void Update () {
         inputControl();
-
-        
     }
 
     public void inputControl()
@@ -69,4 +72,9 @@ public class PlayerControl : MonoBehaviour {
             Destroy(collision.gameObject);
         }
     }
+
+	public void clickBullet()
+	{
+		Instantiate(bullet, transform.position, Quaternion.identity);
+	}
 }
