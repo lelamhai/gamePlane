@@ -69,4 +69,9 @@ public class PlayerControl : MonoBehaviour {
             Destroy(collision.gameObject);
         }
     }
+
+	public void clickBullet()
+	{
+		Instantiate(bullet, transform.position, Quaternion.identity);
+	}
 }
