@@ -6,6 +6,8 @@ public class BulletControl : MonoBehaviour {
     public float speed;
     float cameraHeight;
     float cameraWidth;
+
+    public GameObject effectEmeny;
     // Use this for initialization
     void Start()
     {
@@ -48,8 +50,10 @@ public class BulletControl : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "emeny")
 		{
-			Destroy (this.gameObject);
-			Destroy (collision.gameObject);
+			Destroy(this.gameObject);
+			Destroy(collision.gameObject);
+            Destroy(Instantiate(effectEmeny, this.transform.position, this.transform.rotation) as GameObject, 2);
+            
 		}
 	}
 }

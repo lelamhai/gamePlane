@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  effectEmeny: {fileID: 1242493706853484, guid: 3bf2129c038e47443b600678c3b2a23b,
+    type: 2}
 --- !u!212 &212398881297491810
 SpriteRenderer:
   m_ObjectHideFlags: 1
