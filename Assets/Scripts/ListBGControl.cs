@@ -6,6 +6,7 @@ public class ListBGControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         setFullBackground();
+       
     }
 	
 	// Update is called once per frame

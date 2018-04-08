@@ -290,7 +290,10 @@
     <Compile Include="Assets\Scripts\Joytick.cs" />
     <Compile Include="Assets\Scripts\ListBackgroundControl.cs" />
     <Compile Include="Assets\Scripts\ListBGControl.cs" />
+    <Compile Include="Assets\Scripts\MainGame.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\PointControl.cs" />
+    <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\SpawnEmeny.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

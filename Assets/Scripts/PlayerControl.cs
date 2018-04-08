@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
-    public GameObject listBG;
     public GameObject bullet;
     private float speed;
     float cameraHeight;
@@ -14,8 +13,6 @@ public class PlayerControl : MonoBehaviour {
     private float xMin, xMax, yMin, yMax;
     // Use this for initialization
     void Start () {
-
-
         speed = 0.1f;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
@@ -34,7 +31,6 @@ public class PlayerControl : MonoBehaviour {
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), Mathf.Clamp(transform.position.y, yMin, yMax), 0f);//to restric movement of player
         }
         inputControl();
-
     }
 
     public void inputControl()
