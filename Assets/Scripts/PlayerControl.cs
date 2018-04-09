@@ -11,6 +11,9 @@ public class PlayerControl : MonoBehaviour {
 	public Joytick moveJoytick;
     private Vector3 direction;
     private float xMin, xMax, yMin, yMax;
+    public GameObject menuPanel;
+    public GameObject btnResume;
+
     // Use this for initialization
     void Start () {
         speed = 0.1f;
@@ -20,6 +23,8 @@ public class PlayerControl : MonoBehaviour {
         xMin = -cameraWidth;
         yMax = cameraHeight;
         yMin = -cameraHeight;
+
+        Singleton.Instance.Point = 0;
     }
 	
 	// Update is called once per frame
@@ -78,6 +83,8 @@ public class PlayerControl : MonoBehaviour {
         {
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
+            menuPanel.SetActive(true);
+            btnResume.SetActive(false);
         }
     }
 

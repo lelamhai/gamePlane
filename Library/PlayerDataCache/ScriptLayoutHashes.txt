@@ -47,7 +47,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-849e279142415306cf455f3ed30fbba5 Assembly-CSharp.dll:.PlayerControl
+8d5dc7dd4d082a39e996a365e97f2670 Assembly-CSharp.dll:.PlayerControl
 e759744a196acc61c0510bc1dbbd93a4 Assembly-CSharp.dll:.SpawnEmeny
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -148,3 +148,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainGame
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 232bafdd3f15277a55e725f8178c232e Assembly-CSharp.dll:.BulletControl
+aa698f44b7206ddad081a8796228de8f Assembly-CSharp.dll:.MenuControl

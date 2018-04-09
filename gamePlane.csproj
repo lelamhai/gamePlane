@@ -291,6 +291,7 @@
     <Compile Include="Assets\Scripts\ListBackgroundControl.cs" />
     <Compile Include="Assets\Scripts\ListBGControl.cs" />
     <Compile Include="Assets\Scripts\MainGame.cs" />
+    <Compile Include="Assets\Scripts\MenuControl.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\PointControl.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
