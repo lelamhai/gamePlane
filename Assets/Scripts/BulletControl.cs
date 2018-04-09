@@ -6,12 +6,18 @@ public class BulletControl : MonoBehaviour {
     public float speed;
     float cameraHeight;
     float cameraWidth;
+
+    public GameObject effectEmeny;
+
+    public GameObject pointGO;
+    private int point;
     // Use this for initialization
     void Start()
     {
         speed = 5f;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
+        point = 0;
     }
 
     // Update is called once per frame
@@ -48,8 +54,10 @@ public class BulletControl : MonoBehaviour {
 	{
 		if(collision.gameObject.tag == "emeny")
 		{
-			Destroy (this.gameObject);
-			Destroy (collision.gameObject);
-		}
+			Destroy(this.gameObject);
+			Destroy(collision.gameObject);
+            Destroy(Instantiate(effectEmeny, this.transform.position, this.transform.rotation) as GameObject, 2);
+            Singleton.Instance.Point += 1;
+        }
 	}
 }

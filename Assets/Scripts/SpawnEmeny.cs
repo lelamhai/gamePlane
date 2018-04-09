@@ -15,9 +15,9 @@ public class SpawnEmeny : MonoBehaviour {
 		repeatEmeny = Random.Range (3f, 5f);
 		deplayEmeny = Random.Range (3f,5f);
 		InvokeRepeating ("SpawnEmenys", deplayEmeny, repeatEmeny);
-
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
+       
     }
 	
 	// Update is called once per frame

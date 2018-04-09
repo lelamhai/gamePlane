@@ -3,25 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
-    public GameObject listBG;
     public GameObject bullet;
     private float speed;
     float cameraHeight;
     float cameraWidth;
 
 	public Joytick moveJoytick;
-	public Vector3 direction;
+    private Vector3 direction;
+    private float xMin, xMax, yMin, yMax;
+    public GameObject menuPanel;
+    public GameObject btnResume;
+
     // Use this for initialization
     void Start () {
-        speed = 5f;
+        speed = 0.1f;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
+        xMax = cameraWidth; // I used 50 because the size of player is 100*100
+        xMin = -cameraWidth;
+        yMax = cameraHeight;
+        yMin = -cameraHeight;
 
-
+        Singleton.Instance.Point = 0;
     }
 	
 	// Update is called once per frame
 	void Update () {
+        direction = moveJoytick.InputDirection;
+        if (direction.magnitude != 0)
+        {
+            transform.position += direction * speed;
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), Mathf.Clamp(transform.position.y, yMin, yMax), 0f);//to restric movement of player
+        }
         inputControl();
     }
 
@@ -70,6 +83,8 @@ public class PlayerControl : MonoBehaviour {
         {
             Destroy(this.gameObject);
             Destroy(collision.gameObject);
+            menuPanel.SetActive(true);
+            btnResume.SetActive(false);
         }
     }
 

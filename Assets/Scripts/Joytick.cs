@@ -5,48 +5,51 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class Joytick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler {
-	public Image BGimage, joytickImage;
-	public Vector3 direction;
-	// Use this for initialization
-	void Start () {
-		BGimage = GetComponent<Image> ();
+    private Image jsContainer;
+    private Image joystick;
 
-		joytickImage = transform.GetChild (0).GetComponentInChildren<Image> ();
-		direction = Vector3.zero;
-	}
+    public Vector3 InputDirection;
+    // Use this for initialization
+    void Start () {
+        jsContainer = GetComponent<Image>();
+        joystick = transform.GetChild(0).GetComponent<Image>(); //this command is used because there is only one child in hierarchy
+        InputDirection = Vector3.zero;
+    }
 
 	public void OnDrag(PointerEventData ped)
 	{
-		Vector2 pos = Vector2.zero;
-		if(RectTransformUtility.ScreenPointToLocalPointInRectangle(
-			BGimage.rectTransform, ped.position,
-			ped.pressEventCamera, out pos))
-		{
-			pos.x = (pos.x / BGimage.rectTransform.sizeDelta.x);
-			pos.y = (pos.y / BGimage.rectTransform.sizeDelta.y);
+        Vector2 position = Vector2.zero;
 
-			float x = (BGimage.rectTransform.pivot.x == 1) ? pos.x * 2 + 1 : pos.x * 2 - 1;
-			float y = (BGimage.rectTransform.pivot.y == 1) ? pos.y * 2 + 1 : pos.y * 2 - 1;
+        //To get InputDirection
+        RectTransformUtility.ScreenPointToLocalPointInRectangle
+                (jsContainer.rectTransform,
+                ped.position,
+                ped.pressEventCamera,
+                out position);
 
-			direction = new Vector3(x, 0, y);
-			direction = (direction.magnitude > 1) ? direction.normalized : direction;
+        position.x = (position.x / jsContainer.rectTransform.sizeDelta.x);
+        position.y = (position.y / jsContainer.rectTransform.sizeDelta.y);
 
-			joytickImage.rectTransform.anchoredPosition =
-				new Vector2(direction.x * (BGimage.rectTransform.sizeDelta.x / 3),
-					direction.z * (BGimage.rectTransform.sizeDelta.y / 3));
-			
-			Debug.Log(direction);
-		}
-	}
+        float x = (jsContainer.rectTransform.pivot.x == 1f) ? position.x * 2 + 1 : position.x * 2 - 1;
+        float y = (jsContainer.rectTransform.pivot.y == 1f) ? position.y * 2 + 1 : position.y * 2 - 1;
 
-	public void OnPointerDown(PointerEventData ped)
+        InputDirection = new Vector3(x, y, 0);
+        InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
+
+        //to define the area in which joystick can move around
+        joystick.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (jsContainer.rectTransform.sizeDelta.x / 3)
+                                                               , InputDirection.y * (jsContainer.rectTransform.sizeDelta.y) / 3);
+
+    }
+
+    public void OnPointerDown(PointerEventData ped)
 	{
 		OnDrag(ped);
 	}
 
 	public void OnPointerUp(PointerEventData ped)
 	{
-		direction = Vector3.zero;
-		joytickImage.rectTransform.anchoredPosition = Vector3.zero;
-	}
+        InputDirection = Vector3.zero;
+        joystick.rectTransform.anchoredPosition = Vector3.zero;
+    }
 }
