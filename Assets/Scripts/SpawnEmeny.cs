@@ -10,8 +10,10 @@ public class SpawnEmeny : MonoBehaviour {
 
     float cameraHeight;
     float cameraWidth;
+    float widthEmeny; 
     // Use this for initialization
     void Start () {
+        widthEmeny = (emeny.GetComponent<SpriteRenderer>().bounds.size.x) / 2;
 		repeatEmeny = Random.Range (3f, 5f);
 		deplayEmeny = Random.Range (3f,5f);
 		InvokeRepeating ("SpawnEmenys", deplayEmeny, repeatEmeny);
@@ -22,7 +24,7 @@ public class SpawnEmeny : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		positionAtEmeny = Random.Range (-cameraWidth, cameraWidth);
+		positionAtEmeny = Random.Range (-cameraWidth + widthEmeny, cameraWidth - widthEmeny);
 	}
 
 	private void SpawnEmenys()

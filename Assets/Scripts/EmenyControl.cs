@@ -6,10 +6,13 @@ public class EmenyControl : MonoBehaviour {
     private float speed;
 	float cameraHeight;
     float cameraWidth;
+
+    private float widthEmeny;
     // Use this for initialization
     void Start()
     {
         speed = 3f;
+        widthEmeny = (GetComponent<SpriteRenderer>().bounds.size.x) / 2;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
     }

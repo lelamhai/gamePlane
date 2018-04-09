@@ -13,18 +13,23 @@ public class PlayerControl : MonoBehaviour {
     private float xMin, xMax, yMin, yMax;
     public GameObject menuPanel;
     public GameObject btnResume;
+    private float widthPlayer;
+    private float heightPlayer;
 
     // Use this for initialization
     void Start () {
         speed = 0.1f;
+        widthPlayer = (GetComponent<SpriteRenderer>().bounds.size.x) / 2;
+        heightPlayer = (GetComponent<SpriteRenderer>().bounds.size.y) / 2;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
-        xMax = cameraWidth; // I used 50 because the size of player is 100*100
-        xMin = -cameraWidth;
-        yMax = cameraHeight;
-        yMin = -cameraHeight;
+        xMax = cameraWidth - widthPlayer; // I used 50 because the size of player is 100*100
+        xMin = -cameraWidth + widthPlayer;
+        yMax = cameraHeight - heightPlayer;
+        yMin = -cameraHeight + heightPlayer;
 
         Singleton.Instance.Point = 0;
+        
     }
 	
 	// Update is called once per frame
