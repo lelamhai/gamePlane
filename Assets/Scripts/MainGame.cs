@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class MainGame : MonoBehaviour {
 
-    private void Start()
+    public bool DisplayCloud()
     {
-        
-    }
-
-    private void Update()
-    {
-        
+        if(Singleton.Instance.Point >= 5)
+        {
+            return true;
+        }
+        return false;
     }
 }

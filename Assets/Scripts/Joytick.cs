@@ -13,11 +13,13 @@ public class Joytick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerD
     void Start () {
         jsContainer = GetComponent<Image>();
         joystick = transform.GetChild(0).GetComponent<Image>(); //this command is used because there is only one child in hierarchy
+        // init player
         InputDirection = Vector3.zero;
     }
 
 	public void OnDrag(PointerEventData ped)
 	{
+        // player position click
         Vector2 position = Vector2.zero;
 
         //To get InputDirection

@@ -27,9 +27,7 @@ public class PlayerControl : MonoBehaviour {
         xMin = -cameraWidth + widthPlayer;
         yMax = cameraHeight - heightPlayer;
         yMin = -cameraHeight + heightPlayer;
-
         Singleton.Instance.Point = 0;
-        
     }
 	
 	// Update is called once per frame
@@ -40,6 +38,7 @@ public class PlayerControl : MonoBehaviour {
             transform.position += direction * speed;
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), Mathf.Clamp(transform.position.y, yMin, yMax), 0f);//to restric movement of player
         }
+        
         inputControl();
     }
 

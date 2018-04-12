@@ -9,15 +9,12 @@ public class BulletControl : MonoBehaviour {
 
     public GameObject effectEmeny;
 
-    public GameObject pointGO;
-    private int point;
     // Use this for initialization
     void Start()
     {
         speed = 5f;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
-        point = 0;
     }
 
     // Update is called once per frame
@@ -32,14 +29,10 @@ public class BulletControl : MonoBehaviour {
         start = StartCoroutine(Bullet());
     }
 
-
     Coroutine start;
     IEnumerator Bullet()
     {
-        
         yield return new WaitForSeconds(5f);
-
-
     }
 
     public void destroyBullet()

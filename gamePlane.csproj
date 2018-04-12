@@ -286,10 +286,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletControl.cs" />
+    <Compile Include="Assets\Scripts\CloudControl.cs" />
     <Compile Include="Assets\Scripts\EmenyControl.cs" />
     <Compile Include="Assets\Scripts\Joytick.cs" />
     <Compile Include="Assets\Scripts\ListBackgroundControl.cs" />
-    <Compile Include="Assets\Scripts\ListBGControl.cs" />
     <Compile Include="Assets\Scripts\MainGame.cs" />
     <Compile Include="Assets\Scripts\MenuControl.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
