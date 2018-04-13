@@ -19,23 +19,16 @@ public class BulletControl : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        shootBullet();
-        destroyBullet();
+        ShootBullet();
+        DestroyBullet();
     }
 
-    public void shootBullet()
+    public void ShootBullet()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
-        start = StartCoroutine(Bullet());
     }
 
-    Coroutine start;
-    IEnumerator Bullet()
-    {
-        yield return new WaitForSeconds(5f);
-    }
-
-    public void destroyBullet()
+    public void DestroyBullet()
     {
         if(transform.position.y > cameraHeight)
         {

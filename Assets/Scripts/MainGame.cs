@@ -12,4 +12,13 @@ public class MainGame : MonoBehaviour {
         }
         return false;
     }
+
+    public bool DisplayBulletEmeny()
+    {
+        if(Singleton.Instance.Point >=10)
+        {
+            return true;
+        }
+        return false;
+    }
 }

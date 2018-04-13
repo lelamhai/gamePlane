@@ -935,6 +935,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.53}
   m_EdgeRadius: 0
+--- !u!1 &986214025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 986214027}
+  - component: {fileID: 986214026}
+  m_Layer: 0
+  m_Name: ListRock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &986214026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986214025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c22d76f831a73141908e7f95e456e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: {fileID: 1751929543394494, guid: b807e6295d26cda4e9839aaed998d8ad, type: 2}
+--- !u!4 &986214027
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986214025}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038602077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,12 +1296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f76aac585fd7649be2532f4570ebc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainGame: {fileID: 1768570962}
   listCloud:
   - {fileID: 1347957906}
   - {fileID: 1038602078}
   - {fileID: 1460783735}
   - {fileID: 1958249808}
+  MainGame: {fileID: 1768570962}
 --- !u!4 &1260703440
 Transform:
   m_ObjectHideFlags: 0
@@ -2246,7 +2287,7 @@ MonoBehaviour:
   repeatEmeny: 0
   deplayEmeny: 0
   positionAtEmeny: 0
-  emeny: {fileID: 1182383972696214, guid: 08ce7df814fa04592a8e8406d1be1ae4, type: 2}
+  emeny: {fileID: 1856125120317666, guid: 08ce7df814fa04592a8e8406d1be1ae4, type: 2}
 --- !u!4 &1928739829
 Transform:
   m_ObjectHideFlags: 0

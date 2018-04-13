@@ -14,6 +14,8 @@ public class CloudControl : MonoBehaviour {
 
     float widthCloud;
     float heightCloud;
+
+    public GameObject MainGame;
 	// Use this for initialization
 	void Start () {
         cameraHeight = Camera.main.orthographicSize;
@@ -27,7 +29,7 @@ public class CloudControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Singleton.Instance.Point >= 5)
+        if(MainGame.GetComponent<MainGame>().DisplayCloud())
         {
             SetPositionCloud();
         }

@@ -286,6 +286,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletControl.cs" />
+    <Compile Include="Assets\Scripts\BulletEmenyControl.cs" />
     <Compile Include="Assets\Scripts\CloudControl.cs" />
     <Compile Include="Assets\Scripts\EmenyControl.cs" />
     <Compile Include="Assets\Scripts\Joytick.cs" />
@@ -294,6 +295,8 @@
     <Compile Include="Assets\Scripts\MenuControl.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
     <Compile Include="Assets\Scripts\PointControl.cs" />
+    <Compile Include="Assets\Scripts\Rock.cs" />
+    <Compile Include="Assets\Scripts\RockControl.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\SpawnEmeny.cs" />
   </ItemGroup>
