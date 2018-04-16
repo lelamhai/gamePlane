@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletEmeny: {fileID: 1341104721705042, guid: ceb4cb89bd4506f46a6e95c287ca3822,
     type: 2}
-  MainGame: {fileID: 0}
 --- !u!212 &212632678532580122
 SpriteRenderer:
   m_ObjectHideFlags: 1

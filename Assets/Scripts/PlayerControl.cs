@@ -83,16 +83,23 @@ public class PlayerControl : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(this.gameObject.tag == "player")
+        if (this.gameObject.tag == "player")
         {
+            if (collision.gameObject.name == "Rock(Clone)")
+            {
+                collision.transform.position = new Vector3(0, -cameraHeight,0);
+            }
+            else
+            {
+                Destroy(collision.gameObject);
+            }
             Destroy(this.gameObject);
-            Destroy(collision.gameObject);
             menuPanel.SetActive(true);
             btnResume.SetActive(false);
         }
     }
-
-	public void clickBullet()
+    
+    public void clickBullet()
 	{
 		Instantiate(bullet, transform.position, Quaternion.identity);
 	}

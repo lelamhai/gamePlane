@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c22d76f831a73141908e7f95e456e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rock: {fileID: 1751929543394494, guid: b807e6295d26cda4e9839aaed998d8ad, type: 2}
+  rock: {fileID: 1751929543394494, guid: af03d2779ee4a4d4b88b2fc081ba3dc9, type: 2}
 --- !u!4 &986214027
 Transform:
   m_ObjectHideFlags: 0

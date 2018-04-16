@@ -18,11 +18,8 @@ public class EmenyControl : MonoBehaviour
         widthEmeny = (GetComponent<SpriteRenderer>().bounds.size.x) / 2;
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
-        if(Singleton.Instance.Point >= 10)
-        {
-            StartCoroutine(ShootEmenyBullet());
-        }
-
+        StartCoroutine(ShootEmenyBullet());
+        
     }
 
     // Update is called once per frame

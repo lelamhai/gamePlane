@@ -12,54 +12,62 @@ public class RockControl : MonoBehaviour {
     float rockWidth;
     float rockHeight;
 
-    // Use this for initialization
+    // Use this for initializationh
     void Start () {
         cameraHeight = Camera.main.orthographicSize;
         cameraWidth = cameraHeight * Screen.width / Screen.height;
 
         rockWidth = rock.GetComponent<SpriteRenderer>().bounds.size.x;
         rockHeight = rock.GetComponent<SpriteRenderer>().bounds.size.y;
-
         CopyRock();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        SetPositionRock(rockWidth, rockHeight);
-        StartCoroutine("RunRock");
+        StartRandomRock();
     }
 
-    public void SetPositionRock(float rockWidth, float rockHeight)
+    IEnumerator StartRun;
+    public void StartRandomRock()
     {
-        float widthRandom;
-        if (true)
-        {
-            widthRandom = Random.Range(-cameraWidth + rockWidth, cameraWidth - rockWidth);
-        }
-        transform.position = new Vector3(widthRandom, cameraHeight+rockHeight, 0);
+        StartRun = RunRock();
+        StartCoroutine(StartRun);
     }
 
-
+    public void StopRunRock()
+    {
+        if (StartRun!=null)
+        {
+            StopCoroutine(StartRun);
+            StartRun = null;
+        }
+    }
 
     public void CopyRock()
     {
         for (int i = 0; i < 5; i++)
         {
             GameObject rocks = Instantiate(rock, new Vector3(0, transform.position.y, 0), transform.rotation);
+            //Rigidbody2D rigidbodyRocks = rocks.AddComponent<Rigidbody2D>();
+            //rigidbodyRocks.gravityScale = 0;
+            rocks.AddComponent<BoxCollider2D>();
+            BoxCollider2D col = rocks.GetComponent<BoxCollider2D>();
+            col.isTrigger = true;
             rocks.transform.parent = transform;
             listRock.Add(rocks);
         }
     }
 
-    IEnumerator RunRock()
+    IEnumerator RunRock() 
     {
         for (int i = 0; i < listRock.Count; i++)
         {
-            yield return new WaitForSeconds(Random.Range(1,8));
+            yield return new WaitForSeconds(3f); 
+
             if (!listRock[i].GetComponent<Rock>().flagRun)
             {
                 listRock[i].GetComponent<Rock>().flagRun = true;
-                listRock[i].GetComponent<Rock>().RunRock();
+                listRock[i].GetComponent<Rock>().RandomPosition();
+                if (i == listRock.Count-1)
+                {
+                    StartRandomRock();
+                }
             }
         }
     }

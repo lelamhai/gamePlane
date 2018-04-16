@@ -7,7 +7,6 @@ public class BulletEmenyControl : MonoBehaviour {
     float cameraHeight;
     float cameraWidth;
 
-    public GameObject MainGame;
     // Use this for initialization
     void Start () {
         speed = 5f;
